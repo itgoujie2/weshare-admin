@@ -1,0 +1,8 @@
+{
+	"name" : "weshare-admin",
+	"dependencies" : {
+		"angular" : "latest",
+		"ui-route" : "latest",
+		"font-awesome" : "latest"
+	}
+}

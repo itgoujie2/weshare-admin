@@ -1,0 +1,53 @@
+<form class="form-inline">
+	<!-- <div class="form-group">
+		<label for="search">Search:</label>
+		<input ng-model="filters.title" id="search" class="form-control" placeholder="title">
+	</div> -->
+	<div class="form-group">
+		<label for="category">Category:</label>
+		<select class="form-control" ng-model="filterCategory" id="category" class="dropdown" ng-options="option.title for option in categories">
+			<option value="">---</option>
+		</select>
+	</div>
+	<div class="form-group">
+		<label for="country">Country:</label>
+		<select class="form-control" ng-model="filterCountry" id="country" class="dropdown" ng-options="option.label for option in countries">
+			<option value="">---</option>
+		</select>
+	</div>
+	<div class="form-group">
+		<label for="state">State:</label>
+		<select class="form-control" ng-model="filterState" id="state" class="dropdown" ng-options="option.label for option in states">
+			<option value="">---</option>
+		</select>
+	</div>
+	<div class="form-group">
+		<button class="btn btn-default" ng-click="getWesharesWithCondition()">Update</button>
+	</div>
+</form>
+
+<div dir-paginate="weshare in weshares | filter: filters.title | itemsPerPage: 10">
+
+
+	<div id="box" ng-show="!loadingWeshares">
+		<div class="box-top">
+			<span>{{weshare.title}}</span>
+			<button class="btn-danger pull-right" ng-click="deleteWeshare(weshare._id, $index)">Delete</button>
+		</div>
+		<div class="box-panel">
+			微信号： {{weshare.wechatId}}
+			</br>
+			时间：{{weshare.createdOn | date}}	
+			</br>
+			地区：{{weshare.country.label}} {{weshare.state.label}}
+			</br>
+			<img ng-repeat="image in weshare.images" ng-src="{{image.url}}" ng-click="showImages($index)" class="image-list-thumb"/>
+			</br>
+			内容：{{weshare.description}} 
+		</div>
+	</div>
+
+</div>
+
+<dir-pagination-controls template-url="../libs/angular-utils-pagination/dirPagination.tpl.html"></dir-pagination-controls>
+<h3 ng-show="!loadingWeshares">Total number: {{weshares.length}}</h3>

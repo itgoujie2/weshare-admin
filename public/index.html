@@ -1,0 +1,45 @@
+<html>
+	
+	<head>
+		<title>微分</title>
+		<meta content="text/html" charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0"/>
+		<link rel="stylesheet" type="text/css" href="libs/bootstrap/dist/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/global.css"/>
+	</head>
+
+	<body ng-app="weshareAdmin">
+
+		<div id="header">
+			<div class="logo">
+				
+				<a ui-sref="main"><span>微分</span></a>
+			</div>
+
+		</div>
+
+		<div id="container">
+			<div class="sidebar">
+				<ul id="nav">
+					<li><a ui-sref="weshare">Weshares</a></li>
+					<li><a ui-sref="create">Create</a></li>
+					<li><a href="#">Users</a></li>
+					<li><a href="#">Categories</a></li>
+					<li><a href="#">...</a></li>
+				</ul>
+			</div>
+			<div class="content">
+				<div ui-view></div>
+
+			</div>
+		</div>
+
+		<script src="libs/angular/angular.js"></script>
+		<script src="libs/ui-route/release/angular-ui-router.min.js"></script>
+		<script src="libs/angular-utils-pagination/dirPagination.js"></script>
+		<script src="libs/ionic-rating/ionic-rating.js"></script>
+		<script src="app.js"></script>
+
+	</body>
+	
+</html>

@@ -1,0 +1,22 @@
+{
+	"name" : "weshare-admin",
+	"main" : "server.js",
+	"scripts" : {
+		"start" : "node server.js"
+	},
+	"dependencies" : {
+		"express" : "latest",
+		"mongoose" : "latest",
+		"winston" : "latest",
+		"body-parser" : "latest",
+		"validator" : "latest",
+		"q" : "latest",
+		"bcrypt" : "latest",
+		"uuid" : "latest",
+		"moment" : "latest",
+		"cors" : "latest"
+	},
+	"engines" : {
+		"node" : "latest"
+	}
+}

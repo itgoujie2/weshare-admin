@@ -1,0 +1,35 @@
+<form>
+	<div class="form-group">
+		<label for="wechatId">微信号:</label>
+		<input class="form-control" id="wechatId" ng-model="weshare.wechatId" placeholder="微信号"/>
+	</div>
+	<div class="form-group">
+		<label for="title">标题:</label>
+		<input class="form-control" id="title" ng-model="weshare.title" placeholder="标题"/>
+	</div>
+	<div class="form-group">
+		<label for="category">分类:</label>
+		<select class="form-control" ng-model="weshare.category" id="category" class="dropdown" ng-options="option.title for option in categories">
+			<option value="">---</option>
+		</select>
+	</div>
+	<div class="form-group">
+		<label for="country">国家:</label>
+		<select class="form-control" ng-model="weshare.country" id="country" class="dropdown" ng-options="option.label for option in countries">
+			<option value="">---</option>
+		</select>
+	</div>
+	<div class="form-group">
+		<label for="state">省市:</label>
+		<select class="form-control" ng-model="weshare.state" id="state" class="dropdown" ng-options="option.label for option in states">
+			<option value="">---</option>
+		</select>
+	</div>
+	<div class="form-group">
+		<label for="content">内容:</label>
+		<textarea class="form-control" rows="10"></textarea>
+	</div>
+	<div class="form-group">
+		<button class="btn btn-default" ng-click="createWeshare()">Create</button>
+	</div>
+</form>
