@@ -7,9 +7,14 @@ var bodyParser = require('body-parser');
 var weshare = require('./app/weshare');
 var category = require('./app/category');
 var location = require('./app/location');
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 4000;
 
 mongoose.connect(db.url);
+
+mongoose.connection.on('open', function(ref){
+	console.log('connected: ' + ref);
+})
+
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));

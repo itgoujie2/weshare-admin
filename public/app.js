@@ -36,12 +36,14 @@ angular.module('weshareAdmin', ['ui.router', 'angularUtils.directives.dirPaginat
 		
 		Weshare.getWeshares()
 			.then(function(data){
+				console.log('weshare: ' + JSON.stringify(data, null, 4));
 				$scope.weshares = data.data;
 				$scope.loadingWeshares = false;
 
 				Category.getCategories()
 					.then(function(data){
 						$scope.categories = data.data;
+						console.log('categories: ' + JSON.stringify($scope.categories, null, 4));
 
 						Location.getLocations()
 							.then(function(data){
